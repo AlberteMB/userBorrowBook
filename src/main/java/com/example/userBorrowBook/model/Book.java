@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -29,4 +30,6 @@ public class Book {
     private int pagesQty;
     private boolean available;
     private LocalDate publicationDate;
+
+
 }
