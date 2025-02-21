@@ -1,5 +1,6 @@
 package com.example.userBorrowBook.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,6 +33,7 @@ public class UserApp {
     // let s relation book with user many to many
     // with join table and bidirectional: the owner will be user
     //
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable( name = "APPUSER_BOOK_JOINTABLE",
                 joinColumns = { @JoinColumn(name = "USERAPP_FK")},
