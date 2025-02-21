@@ -30,4 +30,12 @@ public class Borrow {
 
     // in this case the relationship will be bidirectional
     // and the owner will be the Borrow entity
+
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn( name = "BOOK_ID", nullable = false)
+    private Book book;
+
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn( name = "USER_ID", nullable = false)
+    private UserApp user;
 }
