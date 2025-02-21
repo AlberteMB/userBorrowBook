@@ -29,4 +29,13 @@ public class Borrow {
     // let s create a relationship between Book and Borrow: one to many
     // it will be unidirectional relationship and the owner will be Borrow
 
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn( name = "BOOK_ID", nullable = false)
+    private Book book;
+
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn( name = "USER_ID", nullable = false)
+    private UserApp user;
+
+
 }
