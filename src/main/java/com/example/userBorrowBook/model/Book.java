@@ -28,6 +28,6 @@ public class Book {
     private boolean available;
     private LocalDate publicationDate;
 
-    @OneToMany(mappedBy = "book",cascade = CascadeType.ALL, orphanRemoval = true)
-    List<Borrow> borrows;
+//    @OneToMany(mappedBy = "book",cascade = CascadeType.ALL, orphanRemoval = true)
+//    List<Borrow> borrows;
 }

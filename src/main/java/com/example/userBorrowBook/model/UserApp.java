@@ -29,6 +29,6 @@ public class UserApp {
     private boolean isArchived;
     private LocalDate dob;
 
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL, orphanRemoval = true)
-    List<Borrow> borrows;
+//    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL, orphanRemoval = true)
+//    List<Borrow> borrows;
 }
