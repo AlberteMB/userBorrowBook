@@ -1,15 +1,13 @@
 package com.example.userBorrowBook.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -34,4 +32,10 @@ public class UserApp {
     // let s relation book with user many to many
     // with join table and bidirectional: the owner will be user
     //
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable( name = "APPUSER_BOOK_JOINTABLE",
+                joinColumns = { @JoinColumn(name = "USERAPP_FK")},
+                inverseJoinColumns = {@JoinColumn(name = "BOOK_FK") })
+    private List<Book> books;
+
 }
